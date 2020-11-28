@@ -1,18 +1,27 @@
 body{
     min-height: 100%;
 }
+
+.board-outer{
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    background-color: rgb(155, 153, 153);
+    color: lightslategrey;
+    padding: 10px;
+    padding-block: inherit;
+}
 .board{
     border: 2px;
     border-style: solid;
-    border-color: indigo;
+    border-color:black;
     display: flex;
-    height: 100%;
 }
 .list{
     border:1px;
     vertical-align: 2px ;
     border-color: black;
-    border-style: dotted;
+    border-style: solid;
     width: 200px;
     padding: 2px;
     padding-right: 2px;
@@ -63,9 +72,10 @@ body{
     width: 60%; /* Could be more or less, depending on screen size */
     height: 60%;
 }
-
 .dialog-footer{
-    position: relative;
+    position: absolute;
+    bottom: 140px;
+    width: 61%;
 }
   
   /* The Close Button */
@@ -73,9 +83,10 @@ body{
     color: #aaa;
     font-size: 24px;
     font-weight: bold;
-    position: relative;
+    position: absolute;
     bottom: 8px;
     right: 8px;
+    float: right;
 }
   
 .dialog-close:hover,
@@ -91,6 +102,14 @@ body{
 }
 
 .comment-input{
-    width: 100%;
+    width: 99%;
     height:100px;
+}
+
+.comments{
+    display: flex;
+    align-items: center;
+}
+.comment-label{
+    width:50%
 }
