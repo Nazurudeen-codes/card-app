@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="card-styles.css">
+        <Script src="cardevents.js" async></Script>
+    </head>
+    <body>
+        
+        <div id="board" class="board">
+            <div id="list" class="list">
+                <button class="delete-list-btn">Delete this List</button>
+                <div id="card" class="card">
+                    <div class="card-main-div">
+                        <h1 id="card=title">Card 1</h1>
+                        <p id="card-description">Sample Card</p>
+                    </div>
+                <!--    <div class="comment-div">
+                        <textarea id="card-comment-input" class="comment-input"></textarea>
+                        <button id="add-comment-btn" class='add-btn'>Add Comment</button>
+                    </div> -->
+                </div>
+                <div>
+                    <button id="add-card-btn" class='add-card-btn'>Add Card</button>
+                </div>
+            </div>
+            
+            <div id="list-add-div">
+                <button id="add-list-btn" class='add-btn'>Add List</button>
+            </div>
+        </div>
+        <div id="dialog" class="dialog">
+            <div class="dialog-content">
+                <div class="dialog-header">
+                    <button id="delete-card-btn" class="delete-btn">Delete Card</button>
+                </div>
+                <div class="dialog-body">
+                    <h1 id="card=title-dialog">Card 1</h1>
+                    <p id="card-description">Sample Card</p>  
+                    <div class="comment-div">
+                        <div>
+                        <textarea id="card-comment-input" class="comment-input"></textarea>
+                        </div>
+                        <button id="add-comment-btn" class='add-btn'>Add Comment</button>
+                    </div>
+                    <div class="comments">
+                        <label class="comment-target">this is c</label>
+                        <div class="date"></div>
+                    </div>
+                </div>
+                <div class="dialog-footer">   
+                    <span class="dialog-close">close</span>
+                </div>
+            </div>  
+        </div>
+
+    </body>
+</html>
