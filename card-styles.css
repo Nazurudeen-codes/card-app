@@ -6,15 +6,10 @@ body{
     border: 2px;
     border-style: solid;
     border-color: black;
-    background-color: rgb(155, 153, 153);
-    color: lightslategrey;
     padding: 10px;
     padding-block: inherit;
 }
 .board{
-    border: 2px;
-    border-style: solid;
-    border-color:black;
     display: flex;
 }
 .list{
