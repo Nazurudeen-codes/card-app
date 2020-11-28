@@ -1,16 +1,10 @@
-/**var cardAddBtn = document.getElementsByClassName('add-card-btn')[0]
-cardAddBtn.addEventListener('click',function(){
-    var divChange = document.getElementsByClassName('div1')[0]
-    var divChange1 = `<button class='add-card-btn'>Card</button>`
-    divChange.innerHTML=divChange1
-})
-**/
 if(document.readyState=='loading'){
     document.addEventListener('DOMContentLoaded',ready)
 }else{
     ready()
 }
 
+//Event Handling function
 function ready(){
     boardDiv = document.getElementsByClassName('board')[0]
     
@@ -23,6 +17,7 @@ function ready(){
    for(var i=0;i<t.length;i++){
        t[i].addEventListener('click',addCard)
    }
+   //Create a dialog to show card details
    var cardOnClick = document.getElementsByClassName('card')
    for(var i=0;i<cardOnClick.length;i++){
         cardOnClick[i].onclick = ()=>{
@@ -32,15 +27,11 @@ function ready(){
    document.getElementsByClassName('dialog-close')[0].onclick = function(){
        dialog.style.display = 'none'
    }
+   //Display the user comments
    document.getElementById('add-comment-btn').onclick = () =>{
-        var date = new Date()
-        document.getElementsByClassName('date')[0].innerHTML = date.toDateString()+' '+date.toLocaleTimeString()
-        var commentTarget = document.getElementsByClassName('comment-target')[0]
-        var comment = document.getElementById('card-comment-input')
-        let value = comment.value
-      //  commentTarget. = value
-
+       addComments()
    }
+   //To delete the list of cards
    var listDeleteBtn = document.getElementsByClassName('delete-list-btn')
    for(var i=0; i<listDeleteBtn.length; i++){
        listDeleteBtn[i].onclick = (event)=>{
@@ -49,6 +40,7 @@ function ready(){
    }
 }
 
+//Adding a new List
 function addList(event){
     var listDiv = document.getElementsByClassName('list')[0]
     var btn = event.target.parentElement
@@ -59,8 +51,8 @@ function addList(event){
         <button class="delete-list-btn">Delete this List</button>
         <div id="card" class="card">
             <div class="card-main-div">
-                <h1 id="card=title">Card 1</h1>
-                <p id="card-description">Sample Card</p>
+                <h2>Card 1</h2>
+                <p>Sample Card</p>
             </div>
         </div>
         <div>
@@ -73,10 +65,25 @@ function addList(event){
     ready()
 }
 
+//Adding a new Card
 function addCard(event){
     var btn = event.target.parentElement
     var cardDiv = document.getElementsByClassName('card')[0]
     var clone = cardDiv.cloneNode(true)
     btn.parentElement.insertBefore(clone,btn)
     ready()
+}
+
+//To Add Comments and its time
+function addComments(event){
+    var comment = document.getElementById('card-comment-input')
+    if(comment.value==''){
+        return
+    }
+    var date = new Date()
+    document.getElementsByClassName('date')[0].innerHTML = date.toDateString()+' '+date.toLocaleTimeString()
+    var commentTarget = document.getElementsByClassName('comment-target')[0]
+    
+    let value = comment.value
+    commentTarget.innerHTML = comment.value
 }
